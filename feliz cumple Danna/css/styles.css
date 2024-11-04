@@ -1,0 +1,172 @@
+body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    background-color: #b11d1d; /* Color de fondo más claro */
+    color: #831a1a;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.container {
+    padding: 20px;
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom right, #921717, #a01525); /* Degradado de fondo */
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
+}
+
+h1 {
+    color: #000000; /* Color más vibrante para el título */
+    font-size: 6vw;
+    margin-top: 20px;
+    animation: slide-in 1s ease-out forwards;
+    opacity: 0; 
+}
+
+.message {
+    font-size: 4vw;
+    margin-top: 20px;
+    animation: slide-in 1.5s ease-out forwards;
+    opacity: 0; 
+    color: #060606; /* Color más suave para el mensaje */
+}
+
+.cake {
+    position: relative;
+    width: 200px; /* Mayor ancho para el pastel */
+    margin: 20px auto;
+    animation: rise 3s ease-in-out forwards;
+}
+
+.cake-layer {
+    width: 200px;
+    height: 40px; /* Altura mayor para las capas del pastel */
+    border-radius: 20px; /* Bordes más redondeados */
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.layer1 {
+    background-color: #ff80ab; /* Color más suave para la capa inferior */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.layer2 {
+    background-color: #ffab40; /* Color más cálido para la capa del medio */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.layer3 {
+    background-color: #ff80ab; /* Color más suave para la capa superior */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.candles {
+    position: absolute;
+    top: -40px; /* Ajustado para las capas más altas */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.candle {
+    width: 12px; /* Ancho mayor para las velas */
+    height: 40px; /* Altura mayor para las velas */
+    background-color: #f0e9e9;
+    position: relative;
+    border-radius: 6px;
+}
+
+.candle::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 8px; /* Mayor ancho para la llama */
+    height: 12px; /* Mayor altura para la llama */
+    background-color: #ffeb3b; /* Color amarillo más brillante */
+    border-radius: 50%;
+    animation: flicker 0.5s infinite alternate;
+}
+
+.image {
+    margin: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Mayor espacio entre imágenes */
+}
+
+.image img {
+    width: 120px; /* Mayor tamaño para las imágenes */
+    border-radius: 10px;
+    animation: float 3s ease-in-out infinite;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad a las imágenes */
+}
+
+@keyframes slide-in {
+    0% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes rise {
+    0% {
+        transform: translateY(100px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes flicker {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.5;
+    }
+}
+
+.confetti {
+    position: absolute;
+    top: -10px;
+    width: 10px;
+    height: 10px;
+    background-color: #ff4081; /* Color del confeti */
+    animation: fall linear infinite;
+    border-radius: 50%;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(100vh) translateX(0) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-100vh) translateX(calc(100vw - 200px)) rotate(720deg);
+    }
+}
+

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danna</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="image" type="image/icon" href="imagenes/logo_danna.ico">
+</head>
+<body>
+    <div class="container">
+        <h1>¡Feliz Cumpleaños principessa !</h1>
+        <div class="cake">
+            <div class="cake-layer layer1"></div>
+            <div class="cake-layer layer2"></div>
+            <div class="cake-layer layer3"></div>
+            <div class="candles">
+                <div class="candle"></div>
+                <div class="candle"></div>
+                <div class="candle"></div>
+            </div>
+        </div>
+        <div class="image">
+           <div>
+               <img src="imagenes/danna.jpg" alt="Imagen de cumpleaños">
+           </div>
+           <div>
+            <img src="imagenes/danna_1.jpg" alt="Imagen de Danna 1">
+           </div>
+            <div>
+                <img src="imagenes/danna_2.jpg" alt="Imagen de Danna 2">
+            </div>
+            <div>
+                <img src="imagenes/danna_3.png" alt="Imagen de Danna 3">
+            </div>
+            <div><img src="imagenes/danna_4.png" alt="Imagen de Danna 4"></div>
+            <div></div>
+           
+        </div>
+        <p class="message">Que tengas un día maravilloso lleno de alegría y sorpresas.</p>
+    </div>
+
+    <!-- Script para el confeti -->
+    <script>
+        const container = document.querySelector('.container');
+        for (let i = 0; i < 100; i++) {
+            const confetti = document.createElement('div');
+            confetti.classList.add('confetti');
+            confetti.style.left = Math.random() * 100 + 'vw';
+            confetti.style.animationDelay = Math.random() * 5 + 's';
+            confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+            confetti.style.animationDuration = (Math.random() * 3 + 5) + 's';
+            container.appendChild(confetti);
+        }
+    </script>
+</body>
+</html>
